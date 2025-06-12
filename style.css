@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-
 :root {
   --dark-green: #004f2d;
   --gold: #004f2d;
@@ -13,7 +12,6 @@
   --white: #fff;
   --text-color: #222;
 }
-
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -35,11 +33,9 @@ ul {
   list-style-type: none;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
-
 
 .logo img {
   height: 50px;
@@ -47,7 +43,6 @@ html {
   max-width: 250px;
   display: block;
 }
-
 
 @media (max-width: 768px) {
   .logo img {
@@ -62,7 +57,6 @@ html {
     max-width: 150px;
   }
 }
-
 
 header {
   position: fixed;
@@ -104,7 +98,6 @@ nav li a:hover {
   color: var(--gold);
 }
 
-
 #backToTop {
   position: fixed;
   right: 20px;
@@ -133,7 +126,6 @@ nav li a:hover {
   opacity: 1;
   visibility: visible;
 }
-
 
 .hero {
   position: relative;
@@ -211,7 +203,6 @@ nav li a:hover {
   }
 }
 
-
 #onas {
   max-width: 1200px;
   margin: 0 auto;
@@ -249,7 +240,6 @@ nav li a:hover {
   margin-bottom: 1rem;
   font-weight: 400;
 }
-
 
 #opinie {
   background-color: #f8f9fa;
@@ -300,7 +290,6 @@ nav li a:hover {
   text-align: center;
 }
 
-
 #uslugi {
   background-color: var(--white);
   padding: 4rem 1rem;
@@ -330,7 +319,6 @@ nav li a:hover {
   font-size: 1rem;
   line-height: 1.4;
 }
-
 
 #kontakt {
   background-color: #f8f9fa;
@@ -364,7 +352,6 @@ nav li a:hover {
   text-decoration: underline;
 }
 
-
 footer {
   background-color: var(--white);
   text-align: center;
@@ -395,7 +382,6 @@ footer p {
   margin-bottom: 0.2rem;
 }
 
-
 @media (max-width: 992px) {
   .hero h1 {
     font-size: 2rem;
@@ -407,19 +393,34 @@ footer p {
 
 @media (max-width: 768px) {
   .nav-container {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
   }
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+
+  .logo img {
+    height: 40px;
+    max-width: 150px;
   }
+
   #onas {
     flex-direction: column;
   }
+
   .opinie-container {
     grid-template-columns: 1fr;
   }
+
   .services-list ul {
     margin-left: 1rem;
   }
@@ -429,9 +430,11 @@ footer p {
   .hero h1 {
     font-size: 1.8rem;
   }
+
   .hero p {
     font-size: 0.9rem;
   }
+
   .hero a.btn-primary {
     padding: 0.6rem 1.2rem;
   }
