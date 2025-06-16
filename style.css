@@ -42,6 +42,7 @@ html {
   width: auto;
   max-width: 250px;
   display: block;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
