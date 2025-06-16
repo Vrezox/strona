@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://rachunkowoscjureczko.com/sitemap.xml
