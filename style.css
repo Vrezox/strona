@@ -408,10 +408,6 @@ footer p {
     gap: 1rem;
   }
 
-  .logo img {
-    height: 40px;
-    max-width: 150px;
-  }
 
   #onas {
     flex-direction: column;
