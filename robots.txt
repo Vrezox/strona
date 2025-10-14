@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html 
 Disallow: /polityka-prywatnosci.html
-Sitemap: http://rachunkowoscjureczko.com/sitemap.xml
+Sitemap: https://rachunkowoscjureczko.com/sitemap.xml
