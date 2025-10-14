@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /404.html 
-Disallow: /polityka-prywatnosci.html
 Sitemap: https://rachunkowoscjureczko.com/sitemap.xml
