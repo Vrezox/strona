@@ -1,6 +1,6 @@
 const backToTopBtn = document.getElementById("backToTop");
 
-// Debounce – dla lepszej wydajności na słabszych urządzeniach
+
 let scrollTimeout;
 
 window.addEventListener("scroll", () => {
@@ -11,7 +11,7 @@ window.addEventListener("scroll", () => {
     } else {
       backToTopBtn.classList.remove("show");
     }
-  }, 50); // debounce 50ms
+  }, 50); 
 });
 
 backToTopBtn.addEventListener("click", () => {
@@ -19,5 +19,6 @@ backToTopBtn.addEventListener("click", () => {
     top: 0,
     behavior: "smooth"
   });
-  // Nie usuwamy klasy „show” ręcznie – scroll zrobi to sam, gdy dojedziemy na górę
+  
 });
+
