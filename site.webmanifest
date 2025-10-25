@@ -1,39 +1,42 @@
 {
+  "id": "https://www.rachunkowoscjureczko.com/",
   "name": "Biuro Rachunkowe Katarzyna Jureczko",
   "short_name": "BR Jureczko",
-  "start_url": "/",
-  "scope": "/",
+  "lang": "pl",
+  "start_url": "https://www.rachunkowoscjureczko.com/",
+  "scope": "https://www.rachunkowoscjureczko.com/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#004f2d",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "https://www.rachunkowoscjureczko.com/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "https://www.rachunkowoscjureczko.com/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/favicon-32x32.png",
+      "src": "https://www.rachunkowoscjureczko.com/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/favicon-16x16.png",
+      "src": "https://www.rachunkowoscjureczko.com/favicon-16x16.png",
       "sizes": "16x16",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "https://www.rachunkowoscjureczko.com/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "maskable any"
     }
   ]
 }
+
