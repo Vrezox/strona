@@ -22,3 +22,24 @@ backToTopBtn.addEventListener("click", () => {
   
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const privacyPopup = document.getElementById("privacyPopup");
+  const privacyAcceptButton = document.getElementById("privacyAccept");
+
+  if (!privacyPopup || !privacyAcceptButton) {
+    return;
+  }
+
+  const privacyNoticeAccepted = localStorage.getItem(
+    "privacyNoticeAccepted"
+  );
+
+  if (privacyNoticeAccepted !== "true") {
+    privacyPopup.classList.add("is-visible");
+  }
+
+  privacyAcceptButton.addEventListener("click", function () {
+    localStorage.setItem("privacyNoticeAccepted", "true");
+    privacyPopup.classList.remove("is-visible");
+  });
+});
