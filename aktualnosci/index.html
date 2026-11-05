@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+
+  <title>Aktualności i poradniki | Biuro Rachunkowe Jureczko</title>
+
+  <meta
+    name="description"
+    content="Aktualności podatkowe, poradniki księgowe i informacje z Biura Rachunkowego Katarzyna Jureczko. Wiedza dla przedsiębiorców i organizacji."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Biuro Rachunkowe Katarzyna Jureczko">
+
+  <link
+    rel="canonical"
+    href="https://www.rachunkowoscjureczko.com/aktualnosci/"
+  >
+
+  <!-- OPEN GRAPH -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta
+    property="og:title"
+    content="Aktualności i poradniki | Biuro Rachunkowe Jureczko"
+  >
+  <meta
+    property="og:description"
+    content="Poradniki księgowe, informacje podatkowe i aktualności naszego biura."
+  >
+  <meta
+    property="og:url"
+    content="https://www.rachunkowoscjureczko.com/aktualnosci/"
+  >
+
+  <!-- IKONY -->
+
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <!-- CZCIONKI -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+
+  <!-- STYLE -->
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="akstyle.css">
+
+</head>
+
+<body>
+
+  <!-- PRZYCISK POWROTU NA GÓRĘ -->
+
+  <button
+    id="backToTop"
+    type="button"
+    aria-label="Powrót do góry"
+  >
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+
+  <!-- MENU -->
+
+  <header>
+
+    <div class="nav-container">
+
+      <a href="../index.html" class="logo">
+        <img
+          src="../images/logo.png"
+          alt="Logo Biura Rachunkowego Katarzyna Jureczko"
+        >
+      </a>
+
+      <nav aria-label="Główna nawigacja">
+
+        <ul>
+          <li><a href="../index.html#onas">O mnie</a></li>
+          <li><a href="../index.html#opinie">Opinie</a></li>
+          <li><a href="../index.html#uslugi">Usługi</a></li>
+          <li><a href="index.html" aria-current="page">Aktualności</a></li>
+          <li><a href="../index.html#kontakt">Kontakt</a></li>
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- GŁÓWNA ZAWARTOŚĆ -->
+
+  <main class="aktualnosci">
+
+    <!-- POWRÓT NA STRONĘ GŁÓWNĄ -->
+
+<div class="aktualnosci-powrot-gora">
+  <a href="../index.html">
+    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+    Wróć na stronę główną
+  </a>
+</div>
+
+    <!-- NAGŁÓWEK -->
+
+    <section
+      class="aktualnosci-naglowek"
+      aria-labelledby="aktualnosci-heading"
+    >
+
+      <h1 id="aktualnosci-heading">
+        Aktualności i poradniki
+      </h1>
+
+      <p>
+        Poznaj najnowsze informacje ze świata
+        księgowości i podatków oraz praktyczne
+        wskazówki dla przedsiębiorców.
+      </p>
+
+    </section>
+
+
+    <!-- FILTROWANIE ARTYKUŁÓW -->
+
+    <section
+      class="aktualnosci-zawartosc"
+      aria-label="Lista aktualności i poradników"
+    >
+
+      <div
+        class="aktualnosci-filtry"
+        role="group"
+        aria-label="Filtruj artykuły według kategorii"
+      >
+
+        <button
+          type="button"
+          class="aktualnosci-filtr active"
+          data-kategoria="Wszystkie"
+          aria-pressed="true"
+        >
+          Wszystkie
+        </button>
+
+        <button
+          type="button"
+          class="aktualnosci-filtr"
+          data-kategoria="Podatki i przepisy"
+          aria-pressed="false"
+        >
+          Podatki i przepisy
+        </button>
+
+        <button
+          type="button"
+          class="aktualnosci-filtr"
+          data-kategoria="Poradniki"
+          aria-pressed="false"
+        >
+          Poradniki
+        </button>
+
+        <button
+          type="button"
+          class="aktualnosci-filtr"
+          data-kategoria="Aktualności biura"
+          aria-pressed="false"
+        >
+          Aktualności biura
+        </button>
+
+      </div>
+
+
+      <!-- KOMUNIKAT O LICZBIE WYNIKÓW -->
+
+      <p
+        id="aktualnosci-status"
+        class="aktualnosci-status"
+        role="status"
+        aria-live="polite"
+      >
+        Ładowanie artykułów...
+      </p>
+
+
+      <!-- KAFELKI ARTYKUŁÓW -->
+
+      <div
+        id="aktualnosci-lista"
+        class="aktualnosci-lista"
+      >
+        <!--
+          Kafelki zostaną automatycznie
+          wygenerowane przez akscript.js
+          na podstawie artykuly.json.
+        -->
+      </div>
+
+    </section>
+
+
+    <!-- POWRÓT NA STRONĘ GŁÓWNĄ -->
+
+    <div class="aktualnosci-powrot">
+
+      <a href="../index.html">
+
+        <i
+          class="fas fa-arrow-left"
+          aria-hidden="true"
+        ></i>
+
+        Wróć na stronę główną
+
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- STOPKA -->
+
+  <footer>
+
+    <p>
+      &copy; 2026 Biuro Rachunkowe Katarzyna Jureczko.
+      Wszelkie prawa zastrzeżone.
+    </p>
+
+    <p>
+      <a href="../polityka-prywatnosci.html">
+        Polityka prywatności
+      </a>
+    </p>
+
+  </footer>
+
+
+  <!-- KOMUNIKAT PRYWATNOŚCI -->
+
+  <div
+    id="privacyPopup"
+    class="privacy-popup"
+    role="region"
+    aria-labelledby="privacyPopupTitle"
+    aria-describedby="privacyPopupText"
+  >
+
+    <div class="privacy-popup-content">
+
+      <div class="privacy-popup-text">
+
+        <h2 id="privacyPopupTitle">
+          Prywatność
+        </h2>
+
+        <p id="privacyPopupText">
+          Ta strona korzysta z zewnętrznych zasobów
+          oraz może przetwarzać podstawowe dane
+          techniczne związane z jej działaniem.
+
+          Szczegóły znajdziesz w
+
+          <a href="../polityka-prywatnosci.html">
+            polityce prywatności
+          </a>.
+        </p>
+
+      </div>
+
+      <button
+        type="button"
+        id="privacyAccept"
+      >
+        Rozumiem
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="../script.js"></script>
+  <script src="akscript.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1099 @@
+
+/* =========================================
+   BIURO RACHUNKOWE JURECZKO
+   AKTUALNOŚCI - WYGLĄD ARTYKUŁÓW
+   ========================================= */
+
+
+/* GŁÓWNY OBSZAR ARTYKUŁU */
+
+.artykul {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 160px 24px 70px;
+}
+
+
+/* TREŚĆ GŁÓWNA */
+
+.artykul article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   NAGŁÓWEK ARTYKUŁU
+   ========================================= */
+
+.artykul-naglowek {
+  margin-bottom: 45px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e5e9e6;
+}
+
+.artykul-kategoria {
+  display: inline-block;
+  margin-bottom: 16px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--dark-green);
+}
+
+.artykul-naglowek h1 {
+  margin-bottom: 22px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--dark-green);
+  overflow-wrap: break-word;
+}
+
+.artykul-opis {
+  margin-bottom: 24px;
+
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.artykul-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+
+  font-size: 13px;
+  color: #777;
+}
+
+.artykul-meta i {
+  margin-right: 6px;
+  color: var(--dark-green);
+}
+
+
+/* =========================================
+   TREŚĆ ARTYKUŁU
+   ========================================= */
+
+.artykul-tresc {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #333;
+  overflow-wrap: break-word;
+}
+
+.artykul-tresc p {
+  margin-bottom: 24px;
+}
+
+.artykul-tresc h2 {
+  margin-top: 45px;
+  margin-bottom: 18px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--dark-green);
+}
+
+.artykul-tresc h3 {
+  margin-top: 30px;
+  margin-bottom: 14px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--dark-green);
+}
+
+.artykul-tresc strong {
+  font-weight: 600;
+}
+
+
+/* LISTY */
+
+.artykul-tresc ul,
+.artykul-tresc ol {
+  margin: 0 0 26px 24px;
+  padding-left: 10px;
+}
+
+.artykul-tresc ul {
+  list-style-type: disc;
+}
+
+.artykul-tresc ol {
+  list-style-type: decimal;
+}
+
+.artykul-tresc li {
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+.artykul-tresc li::marker {
+  color: var(--dark-green);
+}
+
+
+/* LINKI W TREŚCI */
+
+.artykul-tresc a,
+.artykul-zrodla a {
+  color: var(--dark-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.artykul-tresc a:hover,
+.artykul-zrodla a:hover {
+  color: #007a45;
+}
+
+
+/* ZDJĘCIA */
+
+.artykul-tresc img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 12px;
+}
+
+.artykul-tresc figure {
+  margin: 30px 0;
+}
+
+.artykul-tresc figure img {
+  margin: 0 auto 10px;
+}
+
+.artykul-tresc figcaption {
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+  color: #777;
+}
+
+
+/* =========================================
+   WYRÓŻNIONA INFORMACJA
+   ========================================= */
+
+.artykul-uwaga {
+  margin: 35px 0;
+  padding: 24px 28px;
+
+  background-color: #f1f7f3;
+  border-left: 4px solid var(--dark-green);
+  border-radius: 0 10px 10px 0;
+}
+
+.artykul-uwaga strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--dark-green);
+}
+
+.artykul-uwaga p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   ŹRÓDŁA
+   ========================================= */
+
+.artykul-zrodla {
+  margin-top: 55px;
+  padding-top: 30px;
+  border-top: 1px solid #e5e9e6;
+}
+
+.artykul-zrodla h2 {
+  margin-bottom: 18px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  color: var(--dark-green);
+}
+
+.artykul-zrodla ul {
+  list-style-type: disc;
+  margin-left: 24px;
+  padding-left: 8px;
+}
+
+.artykul-zrodla li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.artykul-zrodla li::marker {
+  color: var(--dark-green);
+}
+
+.artykul-aktualizacja {
+  margin-top: 24px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #777;
+}
+
+
+/* =========================================
+   ZACHĘTA DO KONTAKTU
+   ========================================= */
+
+.artykul-kontakt {
+  max-width: 800px;
+  margin: 65px auto 35px;
+  padding: 42px 30px;
+
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.artykul-kontakt h2 {
+  margin-bottom: 18px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  color: var(--dark-green);
+}
+
+.artykul-kontakt p {
+  max-width: 600px;
+  margin: 0 auto 26px;
+
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+
+/* PRZYCISK KONTAKTOWY */
+
+.artykul-kontakt .btn-primary {
+  display: inline-block;
+  padding: 12px 26px;
+
+  background-color: var(--dark-green);
+  color: #fff;
+
+  border: 1px solid var(--dark-green);
+  border-radius: 25px;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.artykul-kontakt .btn-primary:hover {
+  background-color: #006c3d;
+  color: #fff;
+}
+
+.artykul-kontakt .btn-primary:focus-visible {
+  outline: 3px solid var(--dark-green);
+  outline-offset: 4px;
+}
+
+
+/* =========================================
+   POWRÓT DO AKTUALNOŚCI
+   ========================================= */
+
+.artykul-powrot {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.artykul-powrot a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-green);
+  text-decoration: none;
+}
+
+.artykul-powrot a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.artykul-powrot a:focus-visible {
+  outline: 2px solid var(--dark-green);
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   TABLETY
+   ========================================= */
+
+@media (max-width: 992px) {
+
+  .artykul {
+    padding-top: 165px;
+  }
+
+  .artykul-naglowek {
+    margin-bottom: 35px;
+  }
+
+}
+
+
+/* =========================================
+   TELEFONY
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .artykul {
+    padding: 185px 18px 50px;
+  }
+
+  .artykul-naglowek {
+    margin-bottom: 30px;
+    padding-bottom: 24px;
+  }
+
+  .artykul-kategoria {
+    font-size: 11px;
+  }
+
+  .artykul-naglowek h1 {
+    font-size: clamp(25px, 6vw, 32px);
+  }
+
+  .artykul-opis {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .artykul-tresc {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .artykul-tresc h2 {
+    margin-top: 35px;
+    font-size: 22px;
+  }
+
+  .artykul-tresc h3 {
+    font-size: 18px;
+  }
+
+  .artykul-uwaga {
+    padding: 18px 20px;
+  }
+
+  .artykul-kontakt {
+    margin-top: 45px;
+    padding: 30px 20px;
+  }
+
+  .artykul-kontakt h2 {
+    font-size: 22px;
+  }
+
+  .artykul-kontakt p {
+    font-size: 15px;
+  }
+
+}
+
+
+/* BARDZO MAŁE TELEFONY */
+
+@media (max-width: 480px) {
+
+  .artykul {
+    padding-top: 205px;
+  }
+
+  .artykul-meta {
+    font-size: 12px;
+  }
+
+  .artykul-kontakt .btn-primary {
+    padding: 11px 20px;
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================
+   OGRANICZENIE ANIMACJI
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .artykul-kontakt .btn-primary {
+    transition: none;
+  }
+
+}
+
+
+
+/* =========================================
+   STRONA AKTUALNOŚCI - ARCHIWUM
+   ========================================= */
+
+/* GŁÓWNY OBSZAR */
+
+.aktualnosci {
+  max-width: 1200px;
+  min-height: 70vh;
+  margin: 0 auto;
+  padding: 150px 24px 70px;
+}
+
+
+/* NAGŁÓWEK */
+
+.aktualnosci-naglowek {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.aktualnosci-naglowek h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--dark-green);
+  margin-bottom: 20px;
+}
+
+.aktualnosci-naglowek p {
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+}
+
+
+/* =========================================
+   FILTRY
+   ========================================= */
+
+.aktualnosci-filtry {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.aktualnosci-filtr {
+  padding: 10px 20px;
+
+  background-color: #fff;
+  color: var(--dark-green);
+
+  border: 1px solid var(--dark-green);
+  border-radius: 25px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.aktualnosci-filtr:hover,
+.aktualnosci-filtr.active {
+  background-color: var(--dark-green);
+  color: #fff;
+}
+
+.aktualnosci-filtr:focus-visible {
+  outline: 3px solid var(--dark-green);
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   KOMUNIKAT
+   ========================================= */
+
+.aktualnosci-status {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+
+/* =========================================
+   SIATKA ARTYKUŁÓW
+   ========================================= */
+
+.aktualnosci-lista {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  align-items: stretch;
+}
+
+
+/* KAFELKI - DO WYKORZYSTANIA W JS */
+
+.aktualnosci-kafelek {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 28px;
+  background-color: #fff;
+
+  border: 1px solid #e5e9e6;
+  border-radius: 15px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.aktualnosci-kafelek:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+}
+
+.aktualnosci-kafelek-kategoria {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--dark-green);
+}
+
+.aktualnosci-kafelek h2 {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--dark-green);
+}
+
+.aktualnosci-kafelek-data {
+  font-size: 12px;
+  color: #777;
+}
+
+.aktualnosci-kafelek-opis {
+  flex-grow: 1;
+
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.aktualnosci-kafelek-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-green);
+
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.aktualnosci-kafelek-link:hover {
+  color: #007a45;
+}
+
+.aktualnosci-kafelek-link:focus-visible {
+  outline: 2px solid var(--dark-green);
+  outline-offset: 4px;
+}
+
+
+/* =========================================
+   POWRÓT NA STRONĘ GŁÓWNĄ
+   ========================================= */
+
+.aktualnosci-powrot {
+  margin-top: 55px;
+  text-align: center;
+}
+
+.aktualnosci-powrot a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 15px;
+  color: var(--dark-green);
+
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.aktualnosci-powrot a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+/* =========================================
+   TABLETY
+   ========================================= */
+
+@media (max-width: 992px) {
+
+  .aktualnosci {
+    padding-top: 165px;
+  }
+
+  .aktualnosci-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================
+   TELEFONY
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .aktualnosci {
+    padding: 135px 18px 50px;
+  }
+
+  .aktualnosci-naglowek {
+    margin-bottom: 30px;
+  }
+
+  .aktualnosci-naglowek p {
+    font-size: 15px;
+  }
+
+  .aktualnosci-filtry {
+    gap: 8px;
+  }
+
+  .aktualnosci-filtr {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .aktualnosci-lista {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .aktualnosci-kafelek {
+    padding: 22px;
+  }
+
+  .aktualnosci-kafelek h2 {
+    font-size: 19px;
+  }
+
+}
+
+
+/* BARDZO MAŁE TELEFONY */
+
+@media (max-width: 480px) {
+
+  .aktualnosci {
+    padding-top: 135px;
+  }
+
+}
+
+
+/* OGRANICZENIE ANIMACJI */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .aktualnosci-filtr,
+  .aktualnosci-kafelek {
+    transition: none;
+  }
+
+}
+
+
+
+/* =========================================
+   GÓRNY PRZYCISK POWROTU
+   ========================================= */
+
+.artykul-gorny-pasek {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.artykul-gorny-pasek .artykul-kategoria {
+  margin-bottom: 0;
+}
+
+.artykul-powrot-gora {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 13px;
+
+  border: 1px solid var(--dark-green);
+  border-radius: 25px;
+
+  color: var(--dark-green);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.artykul-powrot-gora:hover {
+  background-color: var(--dark-green);
+  color: #fff;
+}
+
+.artykul-powrot-gora:focus-visible {
+  outline: 3px solid var(--dark-green);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .artykul-powrot-gora {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artykul-powrot-gora {
+    transition: none;
+  }
+}
+
+.aktualnosci-powrot-gora a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--dark-green);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.aktualnosci-powrot-gora a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.aktualnosci-powrot-gora a:focus-visible {
+  outline: 2px solid var(--dark-green);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   POPRAWKI WYGLĄDU AKTUALNOŚCI NA TELEFONACH
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Link powrotu */
+
+  .aktualnosci-powrot-gora {
+    margin-bottom: 35px;
+  }
+
+  .aktualnosci-powrot-gora a {
+    font-size: 12px;
+  }
+
+
+  /* Nagłówek */
+
+  .aktualnosci-naglowek {
+    margin-bottom: 30px;
+  }
+
+  .aktualnosci-naglowek h1 {
+    font-size: clamp(24px, 6vw, 30px);
+    line-height: 1.35;
+    margin-bottom: 18px;
+  }
+
+  .aktualnosci-naglowek p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+
+  /* Filtry - dwa przyciski w rzędzie */
+
+  .aktualnosci-filtry {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .aktualnosci-filtr {
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 8px;
+
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+
+  /* Liczba artykułów */
+
+  .aktualnosci-status {
+    margin-bottom: 25px;
+    font-size: 12px;
+  }
+
+}
+
+
+/* Położenie górnego linku powrotu na telefonach */
+
+@media (max-width: 768px) {
+
+  .aktualnosci-powrot-gora {
+    position: relative;
+    top: -20px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================
+   ZIELONY PAS NAGŁÓWKA AKTUALNOŚCI
+   ========================================= */
+
+.aktualnosci-naglowek {
+  position: relative;
+  isolation: isolate;
+
+  padding: 50px 20px;
+  margin-bottom: 45px;
+
+  text-align: center;
+}
+
+/* Zielone tło na całą szerokość ekranu */
+
+.aktualnosci-naglowek::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  width: 100vw;
+  width: 100dvw;
+
+  transform: translateX(-50%);
+  background-color: var(--dark-green);
+}
+
+/* Biały tytuł */
+
+.aktualnosci-naglowek h1 {
+  color: #ffffff;
+}
+
+/* Biały opis */
+
+.aktualnosci-naglowek p {
+  color: #ffffff;
+}
+
+/* Telefony */
+
+@media (max-width: 768px) {
+
+  .aktualnosci-naglowek {
+    padding: 35px 15px;
+    margin-bottom: 35px;
+  }
+
+}
+
+
+
+/* =========================================
+   ZIELONE KAFELKI AKTUALNOŚCI
+   ========================================= */
+
+.aktualnosci-kafelek {
+  background-color: var(--dark-green);
+  border-color: var(--dark-green);
+}
+
+/* Kategoria */
+
+.aktualnosci-kafelek-kategoria {
+  color: #ffffff;
+}
+
+/* Tytuł artykułu */
+
+.aktualnosci-kafelek h2 {
+  color: #ffffff;
+}
+
+/* Data publikacji */
+
+.aktualnosci-kafelek-data {
+  color: #dcece3;
+}
+
+/* Opis artykułu */
+
+.aktualnosci-kafelek-opis {
+  color: #ffffff;
+}
+
+/* Link "Czytaj więcej" */
+
+.aktualnosci-kafelek-link {
+  color: #ffffff;
+}
+
+.aktualnosci-kafelek-link:hover {
+  color: #dcece3;
+}
+
+.aktualnosci-kafelek-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+
+@media (min-width: 769px) {
+  .aktualnosci-powrot-gora {
+    position: relative;
+    top: -45px;
+  }
+}
+
+/* =========================================
+   ZIELONY NAGŁÓWEK ARTYKUŁU
+   ========================================= */
+
+.artykul-naglowek {
+  position: relative;
+  isolation: isolate;
+
+  padding: 45px 20px;
+  margin-bottom: 45px;
+
+  border-bottom: none;
+}
+
+/* Zielone tło na całą szerokość ekranu */
+
+.artykul-naglowek::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  width: 100vw;
+  width: 100dvw;
+
+  transform: translateX(-50%);
+  background-color: var(--dark-green);
+}
+
+/* Białe napisy */
+
+.artykul-naglowek h1,
+.artykul-naglowek .artykul-kategoria,
+.artykul-naglowek .artykul-opis,
+.artykul-naglowek .artykul-meta,
+.artykul-naglowek .artykul-meta i {
+  color: #ffffff;
+}
+
+/* Przycisk powrotu w zielonym nagłówku */
+
+.artykul-naglowek .artykul-powrot-gora {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.artykul-naglowek .artykul-powrot-gora:hover {
+  background-color: #ffffff;
+  color: var(--dark-green);
+}
+
+.artykul-naglowek .artykul-powrot-gora:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* Telefony */
+
+@media (max-width: 768px) {
+  .artykul-naglowek {
+    padding: 35px 15px;
+    margin-bottom: 35px;
+  }
+}

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://www.rachunkowoscjureczko.com/</loc>
-    <lastmod>2025-10-25</lastmod>
-    <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.rachunkowoscjureczko.com/polityka-prywatnosci.html</loc>
-    <lastmod>2025-10-15</lastmod>
-    <priority>0.5</priority>
+    <loc>https://www.rachunkowoscjureczko.com/aktualnosci/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.rachunkowoscjureczko.com/aktualnosci/artykuly/witamy.html</loc>
   </url>
 
 </urlset>
