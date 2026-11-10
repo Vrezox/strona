@@ -2,14 +2,22 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Strona główna -->
   <url>
     <loc>https://www.rachunkowoscjureczko.com/</loc>
   </url>
 
+  <!-- Najczęściej zadawane pytania -->
+  <url>
+    <loc>https://www.rachunkowoscjureczko.com/faq/</loc>
+  </url>
+
+  <!-- Aktualności i poradniki -->
   <url>
     <loc>https://www.rachunkowoscjureczko.com/aktualnosci/</loc>
   </url>
 
+  <!-- Artykuły -->
   <url>
     <loc>https://www.rachunkowoscjureczko.com/aktualnosci/artykuly/witamy.html</loc>
   </url>

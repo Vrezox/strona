@@ -1,4 +1,14 @@
-/* RESET CSS */
+/* ==========================================================================
+   BIURO RACHUNKOWE KATARZYNA JURECZKO — STYLE STRONY GŁÓWNEJ
+   Wersja po audycie: powtórzenia scalone, style komponentów zachowane.
+   Breakpointy i preferencje ruchu znajdują się w końcowej części arkusza.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   01. RESET I ZMIENNE
+   -------------------------------------------------------------------------- */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +17,10 @@
 
 :root {
   --dark-green: #004f2d;
-  --gold: #004f2d;
-  --black: #000;
   --white: #fff;
   --text-color: #222;
+  --section-gray: #f8f9fa;
+  --green-hover: #007a45;
 }
 
 body {
@@ -33,14 +43,22 @@ ul {
   list-style-type: none;
 }
 
+/* Płynne przewijanie; odstęp nagłówka ustawiany wyłącznie na section[id]. */
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
 }
+
+/* Miejsce nad sekcją przy nawigacji do kotwic (#onas, #kontakt itd.). */
 
 section[id] {
   scroll-margin-top: 90px;
 }
+
+
+/* --------------------------------------------------------------------------
+   02. NAGŁÓWEK I NAWIGACJA
+   -------------------------------------------------------------------------- */
 
 .logo img {
   height: 50px;
@@ -48,20 +66,6 @@ section[id] {
   max-width: 250px;
   display: block;
   object-fit: contain;
-}
-
-@media (max-width: 768px) {
-  .logo img {
-    height: 40px;
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo img {
-    height: 30px;
-    max-width: 150px;
-  }
 }
 
 header {
@@ -101,8 +105,13 @@ nav li a {
 }
 
 nav li a:hover {
-  color: #007a45;
+  color: var(--green-hover);
 }
+
+
+/* --------------------------------------------------------------------------
+   03. PRZYCISK POWROTU NA GÓRĘ
+   -------------------------------------------------------------------------- */
 
 #backToTop {
   position: fixed;
@@ -133,6 +142,11 @@ nav li a:hover {
   visibility: visible;
 }
 
+
+/* --------------------------------------------------------------------------
+   04. SEKCJA POWITALNA (HERO)
+   -------------------------------------------------------------------------- */
+
 .hero {
   position: relative;
   width: 100%;
@@ -147,6 +161,8 @@ nav li a:hover {
   overflow: hidden;
 }
 
+/* Półprzezroczysta nakładka dla kontrastu tekstu na zdjęciu. */
+
 .hero::before {
   content: "";
   position: absolute;
@@ -155,11 +171,12 @@ nav li a:hover {
   z-index: 0;
 }
 
+/* Panel tekstowy i animacja wejścia; na mobilnych szerokość i padding są nadpisywane. */
+
 .hero .hero-content {
   position: relative;
   z-index: 1;
   max-width: 800px;
-  padding: 0 1rem;
   animation: fadeInDown 1s ease forwards;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.3);
@@ -169,10 +186,29 @@ nav li a:hover {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-family: "Poppins", sans-serif;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Dwa wiersze wewnątrz jednego nagłówka H1. */
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  line-height: 1.2;
+}
+
+.hero-title-top {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.hero-title-bottom {
+  font-size: 2.8rem;
+  font-weight: 600;
 }
 
 .hero p {
@@ -184,7 +220,7 @@ nav li a:hover {
 
 .hero a.btn-primary {
   display: inline-block;
-  background-color: var(--gold);
+  background-color: var(--dark-green);
   color: var(--white);
   padding: 0.8rem 1.5rem;
   border-radius: 4px;
@@ -199,15 +235,21 @@ nav li a:hover {
 }
 
 @keyframes fadeInDown {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
   from {
     transform: translateY(-20px);
     opacity: 0;
   }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+
+
+/* --------------------------------------------------------------------------
+   05. SEKCJA O MNIE
+   -------------------------------------------------------------------------- */
 
 #onas {
   max-width: 1200px;
@@ -222,10 +264,18 @@ nav li a:hover {
 .about-image {
   flex: 1;
   min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-image img {
-  width: 100%;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 450px;
+  height: auto;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -235,11 +285,18 @@ nav li a:hover {
   min-width: 300px;
 }
 
-.about-content h2 {
+.about-content h2,
+.about-mobile-heading {
   font-size: 2rem;
   color: var(--dark-green);
   margin-bottom: 1rem;
   font-family: "Poppins", sans-serif;
+}
+
+/* Drugi wariant nagłówka: widoczny tylko na ekranach mobilnych. */
+
+.about-mobile-heading {
+  display: none;
 }
 
 .about-content p {
@@ -247,8 +304,13 @@ nav li a:hover {
   font-weight: 400;
 }
 
+
+/* --------------------------------------------------------------------------
+   06. OPINIE I KARUZELA
+   -------------------------------------------------------------------------- */
+
 #opinie {
-  background-color: #f8f9fa;
+  background-color: var(--section-gray);
   padding: 4rem 1rem;
   text-align: center;
 }
@@ -260,14 +322,12 @@ nav li a:hover {
   font-family: "Poppins", sans-serif;
 }
 
-/* KARUZELA OPINII — kafelki uzupełniane przez script.js z opinie.json */
-/* Widoczne okno, poza które wyjeżdżają kolejne kafelki. */
+/* Widoczne okno opinii; maska wygasza krawędzie listy. */
+
 .opinie-karuzela {
   width: 100%;
   overflow: hidden;
   padding: 15px 0 25px;
-
-  /* Płynne zanikanie na krawędziach */
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
@@ -275,7 +335,6 @@ nav li a:hover {
     black 88%,
     transparent 100%
   );
-
   mask-image: linear-gradient(
     to right,
     transparent 0%,
@@ -285,7 +344,6 @@ nav li a:hover {
   );
 }
 
-/* JS umieści tu dwie identyczne grupy kafelków. */
 .opinie-track {
   display: flex;
   width: max-content;
@@ -299,7 +357,8 @@ nav li a:hover {
   flex-shrink: 0;
 }
 
-/* Przewinięcie o jedną grupę + połowę odstępu między grupami. */
+/* Animację uruchamia script.js po przygotowaniu dwóch grup opinii. */
+
 .opinie-track.is-ready {
   animation: opinie-przewijanie
     var(--opinie-duration, 35s) linear infinite;
@@ -309,11 +368,11 @@ nav li a:hover {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(calc(-50% - 10px));
   }
 }
-
 
 .opinie-kafelek {
   width: 300px;
@@ -338,31 +397,46 @@ nav li a:hover {
   letter-spacing: 1px;
 }
 
+/* ==========================================================
+   TREŚĆ OPINII — FADE-OUT
+
+   Tekst ograniczony do maksymalnie 5 wierszy.
+   Gradient pojawia się tylko wtedy, gdy JavaScript
+   wykryje, że treść opinii jest zbyt długa.
+   ========================================================== */
+
 .opinie-tresc {
+  position: relative;
   font-size: 15px;
   line-height: 1.7;
   color: #333333;
   overflow-wrap: anywhere;
   flex-grow: 1;
 
-  position: relative;
-  overflow: hidden;
   max-height: calc(1.7em * 5);
+  overflow: hidden;
 }
 
-.opinie-tresc::after {
+/* Gradient dla opinii z uciętym tekstem */
+
+/* Długie, łagodne zanikanie tekstu opinii */
+.opinie-tresc.is-truncated::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 3em;
+
+  height: 5em;
   pointer-events: none;
 
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1) 85%
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 25%,
+    rgba(255, 255, 255, 0.45) 55%,
+    rgba(255, 255, 255, 0.75) 80%,
+    rgba(255, 255, 255, 1) 100%
   );
 }
 
@@ -389,7 +463,7 @@ nav li a:hover {
 }
 
 .opinie-link:hover {
-  color: #007a45;
+  color: var(--green-hover);
 }
 
 .opinie-link:focus-visible {
@@ -404,16 +478,15 @@ nav li a:hover {
   color: #666666;
 }
 
-/* =========================================
-   MOJE USŁUGI - 6 KAFELKÓW
-   ========================================= */
+
+/* --------------------------------------------------------------------------
+   07. USŁUGI
+   -------------------------------------------------------------------------- */
 
 #uslugi {
   background-color: var(--white);
   padding: 4rem 1rem;
 }
-
-/* Nagłówek sekcji */
 
 #uslugi h2 {
   font-family: "Poppins", sans-serif;
@@ -423,79 +496,53 @@ nav li a:hover {
   margin-bottom: 1rem;
 }
 
-/* Opis nad kafelkami */
-
 .uslugi-intro {
   max-width: 850px;
   margin: 0 auto 40px;
-
   font-size: 16px;
   line-height: 1.8;
   text-align: center;
   color: #444444;
 }
 
-/* Siatka kafelków */
+/* Trzy kolumny na desktopie, dwie na tabletach, jedna na telefonach. */
 
 .uslugi-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-
   max-width: 1200px;
   margin: 0 auto;
   align-items: stretch;
 }
-
-/* Pojedynczy kafelek */
 
 .uslugi-kafelek {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-
   min-width: 0;
-  height: 100%;
   padding: 28px;
-
   background-color: var(--dark-green);
   border: 1px solid var(--dark-green);
   border-radius: 15px;
-
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-
-  transition:
-    transform 0.2s ease,
+  transition: transform 0.2s ease,
     box-shadow 0.2s ease;
 }
-
-/* Delikatny efekt po najechaniu */
-
-.uslugi-kafelek:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
-}
-
-/* Ikony */
 
 .uslugi-ikona {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 52px;
   height: 52px;
-
   background-color: #176840;
   border-radius: 12px;
-
   color: #ffffff;
   font-size: 24px;
   flex-shrink: 0;
 }
-
-/* Tytuły usług */
 
 .uslugi-kafelek h3 {
   font-family: "Poppins", sans-serif;
@@ -503,10 +550,7 @@ nav li a:hover {
   font-weight: 600;
   line-height: 1.4;
   color: #ffffff;
-  margin: 0;
 }
-
-/* Lista usług */
 
 .uslugi-kafelek ul {
   list-style: disc;
@@ -516,11 +560,9 @@ nav li a:hover {
 
 .uslugi-kafelek li {
   margin-bottom: 10px;
-
   font-size: 14px;
   line-height: 1.7;
   color: #ffffff;
-
   overflow-wrap: anywhere;
 }
 
@@ -532,25 +574,23 @@ nav li a:hover {
   color: #ffffff;
 }
 
-/* =========================================
-   KSIĘGOWOŚĆ STACJONARNA I ONLINE
-   ========================================= */
+
+/* --------------------------------------------------------------------------
+   08. OBSŁUGA STACJONARNA I ONLINE
+   -------------------------------------------------------------------------- */
 
 .uslugi-online {
   max-width: 1200px;
   margin: 35px auto 0;
   padding: 30px 25px;
-
-  background-color: #f8f9fa;
+  background-color: var(--section-gray);
   border: 1px solid #e5e9e7;
   border-radius: 15px;
-
   text-align: center;
 }
 
 .uslugi-online-ikona {
   margin-bottom: 12px;
-
   font-size: 28px;
   color: var(--dark-green);
 }
@@ -559,23 +599,331 @@ nav li a:hover {
   font-family: "Poppins", sans-serif;
   font-size: 22px;
   color: var(--dark-green);
-
   margin-bottom: 15px;
 }
 
 .uslugi-online p {
   max-width: 850px;
   margin: 0 auto;
-
   font-size: 15px;
   line-height: 1.8;
   color: #444444;
 }
 
-/* =========================================
-   TABLETY
-   ========================================= */
+.uslugi-online p + p {
+  margin-top: 12px;
+}
 
+
+/* --------------------------------------------------------------------------
+   09. KONTAKT
+   -------------------------------------------------------------------------- */
+
+#kontakt {
+  background-color: var(--white);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+#kontakt h2 {
+  font-size: 2rem;
+  color: var(--dark-green);
+  margin-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.kontakt-cta {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+#kontakt p {
+  margin-bottom: 1rem;
+}
+
+/* Odstęp nad adresem, niezależnie od kolejności akapitów w HTML. */
+
+#kontakt p:has(> i.fa-map-marker-alt) {
+  margin-top: 30px;
+}
+
+#kontakt i {
+  color: var(--dark-green);
+  margin-right: 0.5rem;
+}
+
+#kontakt a {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+#kontakt p:not(.kontakt-cta) {
+  line-height: 1.7;
+}
+
+
+/* --------------------------------------------------------------------------
+   10. STOPKA
+   -------------------------------------------------------------------------- */
+
+footer {
+  background-color: var(--section-gray);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  position: relative;
+}
+
+footer p {
+  margin-bottom: 0.2rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   11. KOMUNIKAT PRYWATNOŚCI
+   -------------------------------------------------------------------------- */
+
+.privacy-popup {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: none;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #ffffff;
+  background-color: #202020;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.privacy-popup.is-visible {
+  display: block;
+}
+
+.privacy-popup-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.privacy-popup-text {
+  flex: 1;
+}
+
+.privacy-popup h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.privacy-popup p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.privacy-popup a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.privacy-popup button {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  font: inherit;
+  font-weight: 600;
+  color: #202020;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.privacy-popup button:hover {
+  background-color: #eeeeee;
+}
+
+.privacy-popup button:focus-visible,
+.privacy-popup a:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Przycisk ręcznego wstrzymywania animacji na desktopie. */
+
+.opinie-pauza {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 auto 15px;
+  padding: 5px 12px;
+  background: transparent;
+  color: var(--dark-green);
+  border: 1px solid var(--dark-green);
+  border-radius: 20px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.opinie-pauza:hover {
+  background: var(--dark-green);
+  color: #fff;
+}
+
+.opinie-pauza:focus-visible {
+  outline: 3px solid var(--dark-green);
+  outline-offset: 3px;
+}
+
+/* Pauza karuzeli przełączana przez JavaScript. */
+
+.opinie-track.is-paused {
+  animation-play-state: paused;
+}
+
+
+/* --------------------------------------------------------------------------
+   12. AKTUALNOŚCI I PORADNIKI
+   -------------------------------------------------------------------------- */
+
+#aktualnosci {
+  padding: 65px 20px;
+  background-color: var(--section-gray);
+}
+
+#aktualnosci h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--dark-green);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.aktualnosci-intro {
+  max-width: 750px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Na komputerach siatka, a na telefonach kompaktowa lista Flexbox. */
+
+.aktualnosci-podglad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#aktualnosci .aktualnosci-kafelek {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px;
+  background-color: var(--dark-green);
+  border-radius: 15px;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+#aktualnosci .aktualnosci-kafelek-kategoria {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+#aktualnosci .aktualnosci-kafelek h2 {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+  color: #ffffff;
+}
+
+#aktualnosci .aktualnosci-kafelek-data {
+  font-size: 12px;
+  color: #dcece3;
+}
+
+#aktualnosci .aktualnosci-kafelek-opis {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+#aktualnosci .aktualnosci-kafelek-link {
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+#aktualnosci .aktualnosci-kafelek-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.aktualnosci-loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #666;
+}
+
+.aktualnosci-wszystkie {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.aktualnosci-wszystkie a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 25px;
+  border: 1px solid var(--dark-green);
+  border-radius: 25px;
+  color: var(--dark-green);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease,
+              color 0.2s ease;
+}
+
+.aktualnosci-wszystkie a:hover {
+  background-color: var(--dark-green);
+  color: #ffffff;
+}
+
+.aktualnosci-wszystkie a:focus-visible {
+  outline: 3px solid var(--dark-green);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================================
+   13. RESPONSYWNOŚĆ I DOSTĘPNOŚĆ
+   Jedna zbiorcza sekcja na każdy punkt przełamania / preferencję.
+   ========================================================================== */
+
+
+/* (max-width: 992px) */
 @media (max-width: 992px) {
 
   .uslugi-grid {
@@ -587,13 +935,35 @@ nav li a:hover {
     padding: 24px;
   }
 
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .aktualnosci-podglad {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
 }
 
-/* =========================================
-   TELEFONY
-   ========================================= */
 
+/* (max-width: 768px) */
 @media (max-width: 768px) {
+
+  .logo img {
+    height: 40px;
+    max-width: 200px;
+  }
+
+  .about-mobile-heading {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .about-desktop-heading {
+    display: none;
+  }
 
   #uslugi {
     padding: 3rem 1rem;
@@ -644,104 +1014,6 @@ nav li a:hover {
     line-height: 1.7;
   }
 
-}
-
-/* =========================================
-   OGRANICZENIE ANIMACJI
-   ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .uslugi-kafelek {
-    transition: none;
-  }
-
-  .uslugi-kafelek:hover {
-    transform: none;
-  }
-
-}
-
-#kontakt {
-  background-color: var(--white);
-  padding: 4rem 1rem;
-  text-align: center;
-}
-
-#kontakt h2 {
-  font-size: 2rem;
-  color: var(--dark-green);
-  margin-bottom: 1.5rem;
-  font-family: "Poppins", sans-serif;
-}
-
-.kontakt-cta {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-#kontakt p {
-  margin-bottom: 1rem;
-}
-
-#kontakt p:nth-of-type(3) {
-  margin-top: 30px;
-}
-
-#kontakt i {
-  color: var(--dark-green);
-  margin-right: 0.5rem;
-}
-
-#kontakt a {
-  color: var(--text-color);
-  text-decoration: underline;
-}
-
-#kontakt p:not(.kontakt-cta) {
-  line-height: 1.7;
-}
-
-footer {
-  background-color: #f8f9fa;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: #666;
-  position: relative;
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.social-links a {
-  color: var(--dark-green);
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: var(--gold);
-}
-
-footer p {
-  margin-bottom: 0.2rem;
-}
-
-@media (max-width: 992px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
     flex-wrap: wrap;
@@ -752,107 +1024,160 @@ footer p {
   }
 
   nav ul {
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    gap: 0.6rem 1rem;
   }
 
   #onas {
     flex-direction: column;
   }
-}
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
+  section[id] {
+    scroll-margin-top: 130px;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    background-attachment: scroll;
+    padding: 150px 16px 50px;
+  }
+
+  .hero .hero-content {
+    width: 100%;
+    max-width: 600px;
+    padding: 24px 18px;
+  }
+
+  .hero-title-top {
+    font-size: 1.5rem;
+  }
+
+  .hero-title-bottom {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
   }
 
   .hero p {
+    font-size: 1rem;
+  }
+
+  nav li a {
+    display: inline-block;
+    padding: 6px 2px;
     font-size: 0.9rem;
   }
 
-  .hero a.btn-primary {
-    padding: 0.6rem 1.2rem;
+  .opinie-karuzela {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
   }
+
+  .opinie-track.is-ready {
+    animation: none;
+  }
+
+  .opinie-kafelek {
+    width: min(280px, calc(100vw - 64px));
+    padding: 20px;
+    scroll-snap-align: start;
+    height: auto;
+    min-height: 220px;
+  }
+
+  .opinie-grupa[aria-hidden="true"] {
+    display: none;
+  }
+
+  #kontakt p:has(a[href^="mailto:"]) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  #kontakt p:has(a[href^="mailto:"]) i {
+    flex-shrink: 0;
+  }
+
+  #kontakt a[href^="mailto:"] {
+    font-size: 14px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #aktualnosci {
+    padding: 50px 18px;
+  }
+
+  .aktualnosci-intro {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .aktualnosci-podglad {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #aktualnosci .aktualnosci-kafelek {
+    padding: 16px 20px;
+    gap: 7px;
+    border-radius: 12px;
+    min-height: 0;
+  }
+
+  #aktualnosci .aktualnosci-kafelek-kategoria {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  #aktualnosci .aktualnosci-kafelek h2 {
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  #aktualnosci .aktualnosci-kafelek-data {
+    font-size: 11px;
+  }
+
+  #aktualnosci .aktualnosci-kafelek-opis {
+    display: none;
+  }
+
+  #aktualnosci .aktualnosci-kafelek-link {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .aktualnosci-wszystkie {
+    margin-top: 25px;
+  }
+
 }
 
 
-.privacy-popup {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
-  z-index: 9999;
-
-  display: none;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-
-  color: #ffffff;
-  background-color: #202020;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-}
-
-.privacy-popup.is-visible {
-  display: block;
-}
-
-.privacy-popup-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.privacy-popup-text {
-  flex: 1;
-}
-
-.privacy-popup h2 {
-  margin: 0 0 8px;
-  font-size: 1.2rem;
-}
-
-.privacy-popup p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.privacy-popup a {
-  color: #ffffff;
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.privacy-popup button {
-  flex-shrink: 0;
-  padding: 12px 24px;
-
-  font: inherit;
-  font-weight: 600;
-  color: #202020;
-
-  background-color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.privacy-popup button:hover {
-  background-color: #eeeeee;
-}
-
-.privacy-popup button:focus-visible,
-.privacy-popup a:focus-visible {
-  outline: 3px solid #ffffff;
-  outline-offset: 3px;
-}
-
+/* (max-width: 700px) */
 @media (max-width: 700px) {
+
   .privacy-popup {
     right: 10px;
     bottom: 10px;
@@ -869,64 +1194,25 @@ footer p {
   .privacy-popup button {
     width: 100%;
   }
+
 }
 
 
-@media (max-width: 768px) {
-  html {
-    scroll-padding-top: 130px;
-  }
+/* (max-width: 480px) */
+@media (max-width: 480px) {
 
-  section[id] {
-    scroll-margin-top: 130px;
-  }
-}
-
-
-@media (max-width: 768px) {
-
-  .hero {
-    height: auto;
-    min-height: 100svh;
-    background-attachment: scroll;
-    padding: 150px 16px 50px;
-  }
-
-  .hero .hero-content {
-    width: 100%;
-    max-width: 600px;
-    padding: 24px 18px;
-  }
-
-  .hero h1 {
-    font-size: clamp(1.7rem, 5vw, 2.3rem);
+  .logo img {
+    height: 30px;
+    max-width: 150px;
   }
 
   .hero p {
-    font-size: 1rem;
-  }
-
-}
-
-
-@media (max-width: 768px) {
-
-  nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem 1rem;
-  }
-
-  nav li a {
-    display: inline-block;
-    padding: 6px 2px;
     font-size: 0.9rem;
   }
 
-}
-
-@media (max-width: 480px) {
+  .hero a.btn-primary {
+    padding: 0.6rem 1.2rem;
+  }
 
   .about-image,
   .about-content {
@@ -934,40 +1220,34 @@ footer p {
     width: 100%;
   }
 
-  .about-image img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+}
+
+
+/* (hover: hover) and (pointer: fine) */
+@media (hover: hover) and (pointer: fine) {
+
+  .uslugi-kafelek:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+  }
+
+  #aktualnosci .aktualnosci-kafelek:hover {
+    transform: translateY(-4px);
   }
 
 }
 
 
-/* KARUZELA OPINII — telefon: przewijanie palcem zamiast animacji. */
-@media (max-width: 768px) {
-  .opinie-karuzela {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
-    overscroll-behavior-x: contain;
-  }
-
-  .opinie-track.is-ready {
-    animation: none;
-  }
-
-  .opinie-kafelek {
-    width: min(280px, calc(100vw - 64px));
-    min-height: 220px;
-    padding: 20px;
-    scroll-snap-align: start;
-  }
-}
-
-/* DOSTĘPNOŚĆ - OGRANICZENIE ANIMACJI */
-
+/* (prefers-reduced-motion: reduce) */
 @media (prefers-reduced-motion: reduce) {
+
+  .uslugi-kafelek {
+    transition: none;
+  }
+
+  .uslugi-kafelek:hover {
+    transform: none;
+  }
 
   html {
     scroll-behavior: auto;
@@ -993,231 +1273,46 @@ footer p {
     transition-duration: 0.01ms !important;
   }
 
-}
-
-
-/* UKRYCIE POWIELONYCH OPINII NA TELEFONACH */
-
-@media (max-width: 768px) {
-
   .opinie-grupa[aria-hidden="true"] {
     display: none;
   }
 
-}
+  #aktualnosci .aktualnosci-kafelek,
+  .aktualnosci-wszystkie a {
+    transition: none;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-
-  .opinie-grupa[aria-hidden="true"] {
-    display: none;
+  #aktualnosci .aktualnosci-kafelek:hover {
+    transform: none;
   }
 
 }
 
 
-@media (max-width: 768px) {
-  .opinie-karuzela {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 5%,
-      black 95%,
-      transparent 100%
-    );
-
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 5%,
-      black 95%,
-      transparent 100%
-    );
-  }
-}
-
-.opinie-pauza {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-
-  margin: 0 auto 15px;
-  padding: 5px 12px;
-
-  background: transparent;
-  color: var(--dark-green);
-  border: 1px solid var(--dark-green);
-  border-radius: 20px;
-
-  font: inherit;
-  font-size: 11px;
-  cursor: pointer;
-}
-
-.opinie-pauza:hover {
-  background: var(--dark-green);
-  color: #fff;
-}
-
-.opinie-pauza:focus-visible {
-  outline: 3px solid var(--dark-green);
-  outline-offset: 3px;
-}
-
-.opinie-track.is-paused {
-  animation-play-state: paused;
-}
-
-
+/* (max-width: 768px), (prefers-reduced-motion: reduce) */
 @media (max-width: 768px), (prefers-reduced-motion: reduce) {
+
   .opinie-pauza {
     display: none;
   }
-}
-
-/* Adres e-mail na urządzeniach mobilnych */
-
-@media (max-width: 768px) {
-
-  #kontakt p:has(a[href^="mailto:"]) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
-
-  #kontakt p:has(a[href^="mailto:"]) i {
-    flex-shrink: 0;
-  }
-
-  #kontakt a[href^="mailto:"] {
-    font-size: clamp(10px, 3.4vw, 15px);
-    white-space: nowrap;
-  }
 
 }
 
 
-/* =========================================
-   AKTUALNOŚCI NA STRONIE GŁÓWNEJ
-   ========================================= */
+/* ==========================================================
+   PRZYCISK FAQ — SEKCJA MOJE USŁUGI
+   ========================================================== */
 
-#aktualnosci {
-  padding: 65px 20px;
-  background-color: #f8f9fa;
-}
+/* Wyśrodkowanie przycisku pod usługami */
 
-#aktualnosci h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(26px, 4vw, 36px);
-  color: var(--dark-green);
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-/* Opis pod nagłówkiem */
-
-.aktualnosci-intro {
-  max-width: 750px;
-  margin: 0 auto 40px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-/* Trzy kafelki */
-
-.aktualnosci-podglad {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Wygląd kafelków */
-
-#aktualnosci .aktualnosci-kafelek {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-
-  padding: 28px;
-
-  background-color: var(--dark-green);
-  border-radius: 15px;
-  color: #ffffff;
-
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-
-  transition: transform 0.2s ease;
-}
-
-#aktualnosci .aktualnosci-kafelek:hover {
-  transform: translateY(-4px);
-}
-
-#aktualnosci .aktualnosci-kafelek-kategoria {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-}
-
-#aktualnosci .aktualnosci-kafelek h2 {
-  font-size: 20px;
-  line-height: 1.5;
-  margin: 0;
-  text-align: left;
-  color: #ffffff;
-}
-
-#aktualnosci .aktualnosci-kafelek-data {
-  font-size: 12px;
-  color: #dcece3;
-}
-
-#aktualnosci .aktualnosci-kafelek-opis {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #ffffff;
-  flex-grow: 1;
-}
-
-#aktualnosci .aktualnosci-kafelek-link {
-  align-self: flex-start;
-  margin-top: auto;
-
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-#aktualnosci .aktualnosci-kafelek-link:focus-visible {
-  outline: 2px solid #ffffff;
-  outline-offset: 4px;
-}
-
-/* Komunikat ładowania */
-
-.aktualnosci-loading {
-  grid-column: 1 / -1;
-  text-align: center;
-  color: #666;
-}
-
-/* Przycisk do wszystkich aktualności */
-
-.aktualnosci-wszystkie {
-  margin-top: 40px;
+.uslugi-faq {
+  margin-top: 35px;
   text-align: center;
 }
 
-.aktualnosci-wszystkie a {
+/* Wygląd przycisku */
+
+.uslugi-faq-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1233,128 +1328,35 @@ footer p {
   font-weight: 600;
   text-decoration: none;
 
-  transition: background-color 0.2s ease,
-              color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.aktualnosci-wszystkie a:hover {
+/* Podświetlenie po najechaniu */
+
+.uslugi-faq-btn:hover {
   background-color: var(--dark-green);
-  color: #ffffff;
+  color: var(--white);
 }
 
-.aktualnosci-wszystkie a:focus-visible {
+/* Widoczny fokus podczas nawigacji klawiaturą */
+
+.uslugi-faq-btn:focus-visible {
   outline: 3px solid var(--dark-green);
   outline-offset: 3px;
 }
 
-/* =========================================
-   TABLETY
-   ========================================= */
-
-@media (max-width: 992px) {
-  .aktualnosci-podglad {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* =========================================
-   TELEFONY
-   ========================================= */
+/* Mniejszy odstęp na telefonach */
 
 @media (max-width: 768px) {
-  #aktualnosci {
-    padding: 50px 18px;
-  }
-
-  .aktualnosci-intro {
-    font-size: 14px;
-    margin-bottom: 30px;
-  }
-
-  .aktualnosci-podglad {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  #aktualnosci .aktualnosci-kafelek {
-    padding: 22px;
-  }
-
-  #aktualnosci .aktualnosci-kafelek h2 {
-    font-size: 19px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #aktualnosci .aktualnosci-kafelek,
-  .aktualnosci-wszystkie a {
-    transition: none;
-  }
-}
-
-
-
-/* =========================================
-   KOMPAKTOWA LISTA AKTUALNOŚCI NA TELEFONACH
-   ========================================= */
-
-@media (max-width: 768px) {
-
-  /* Jeden artykuł w każdym wierszu */
-
-  .aktualnosci-podglad {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  /* Mniejsze kafelki */
-
-  #aktualnosci .aktualnosci-kafelek {
-    padding: 16px 20px;
-    gap: 7px;
-    border-radius: 12px;
-    min-height: 0;
-  }
-
-  /* Kategoria */
-
-  #aktualnosci .aktualnosci-kafelek-kategoria {
-    font-size: 10px;
-    letter-spacing: 0.5px;
-  }
-
-  /* Tytuł */
-
-  #aktualnosci .aktualnosci-kafelek h2 {
-    font-size: 15px;
-    line-height: 1.4;
-    margin: 0;
-  }
-
-  /* Data */
-
-  #aktualnosci .aktualnosci-kafelek-data {
-    font-size: 11px;
-  }
-
-  /* Ukrywamy opis, żeby oszczędzić miejsce */
-
-  #aktualnosci .aktualnosci-kafelek-opis {
-    display: none;
-  }
-
-  /* Link do artykułu */
-
-  #aktualnosci .aktualnosci-kafelek-link {
-    margin-top: 4px;
-    font-size: 12px;
-  }
-
-  /* Mniejszy odstęp przed archiwum */
-
-  .aktualnosci-wszystkie {
+  .uslugi-faq {
     margin-top: 25px;
   }
+}
 
+/* Ograniczenie animacji */
+
+@media (prefers-reduced-motion: reduce) {
+  .uslugi-faq-btn {
+    transition: none;
+  }
 }

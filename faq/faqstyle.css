@@ -1,0 +1,539 @@
+/* ==============================================================
+   FAQ — BIURO RACHUNKOWE KATARZYNA JURECZKO
+   Dedykowany arkusz /faq/faqstyle.css
+
+   1. Reset i zmienne
+   2. Nagłówek podstrony
+   3. Wprowadzenie
+   4. Rozwijane pytania
+   5. Sekcja kontaktowa i stopka
+   6. Responsywność i dostępność
+   ============================================================== */
+
+/* 1. RESET I ZMIENNE — kolory zgodne z witryną główną. */
+:root {
+  --green: #004f2d;
+  --green-hover: #006c3d;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --border: #dfe8e2;
+  --text: #222222;
+  --muted: #555555;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--white);
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+}
+
+.content-width {
+  width: min(100% - 40px, 960px);
+  margin-inline: auto;
+}
+
+/* Skrót do treści pojawia się przy nawigacji klawiaturą. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 20;
+  padding: 10px 14px;
+  color: var(--white);
+  background: var(--green);
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* 2. NAGŁÓWEK — logo i menu identyczne w układzie jak na stronie głównej. */
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .10);
+}
+
+.header-inner {
+  width: min(100% - 32px, 1200px);
+  min-height: 104px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo img {
+  display: block;
+  width: auto;
+  height: 50px;
+  max-width: 250px;
+  object-fit: contain;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color .3s ease;
+}
+
+.main-nav a:hover {
+  color: #007a45;
+}
+
+/* Biały pas pod menu z odnośnikiem do strony głównej. */
+.faq-back-bar {
+  background: var(--white);
+}
+
+.back-inner {
+  width: min(100% - 32px, 1200px);
+  min-height: 116px;
+  margin-inline: auto;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 33px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  color: var(--green-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* 3. ZIELONY BANER — nagłówek i opis w układzie jak na stronie aktualności. */
+.faq-hero {
+  padding: 62px 20px 65px;
+  text-align: center;
+  background: var(--green);
+  color: var(--white);
+}
+
+.faq-hero h1 {
+  margin: 0 0 22px;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--white);
+}
+
+.faq-lead {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.9;
+  color: var(--white);
+}
+
+.faq-contact h2 {
+  font-family: "Poppins", sans-serif;
+  color: var(--green);
+}
+
+/* 4. PYTANIA — natywne <details> i <summary> działają bez JS. */
+.faq-section {
+  padding: 55px 0 75px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .035);
+}
+
+/* summary jest prawdziwym przyciskiem rozwijania w przeglądarce. */
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 26px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--green);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--green);
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item[open] {
+  border-color: #b8d2c3;
+  box-shadow: 0 5px 18px rgba(0, 79, 45, .065);
+}
+
+.faq-answer {
+  padding: 0 26px 24px;
+  color: #404040;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.faq-answer p {
+  margin-bottom: 0;
+}
+
+/* Delikatna linia oddzielająca pytanie od odpowiedzi. */
+.faq-item[open] .faq-answer::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 0 18px;
+  background: var(--border);
+}
+
+/* 5. KONTAKT — przejście do sekcji kontaktowej na stronie głównej. */
+.faq-contact {
+  padding: 65px 0;
+  background: var(--light-gray);
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 760px;
+}
+
+.faq-contact h2 {
+  margin-bottom: 14px;
+  font-size: clamp(24px, 3vw, 30px);
+}
+
+.faq-contact p {
+  margin-bottom: 26px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border: 1px solid var(--green);
+  border-radius: 28px;
+  color: var(--white);
+  background: var(--green);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.contact-button:hover {
+  color: var(--green);
+  background: var(--white);
+}
+
+.site-footer {
+  padding: 30px 20px;
+  background: var(--light-gray);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 13px;
+  color: #666666;
+}
+
+.site-footer p {
+  margin: 0 0 6px;
+}
+
+.site-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer a:hover {
+  color: var(--green);
+}
+
+/* 6. RESPONSYWNOŚĆ — mniejsze odstępy i czytelne pytania na telefonach. */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    min-height: 0;
+    padding: 12px 0;
+  }
+
+  .logo img {
+    height: 40px;
+    max-width: 200px;
+  }
+
+  .main-nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+
+  .main-nav a {
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 14px;
+  }
+
+  .back-inner {
+    min-height: 80px;
+    padding-top: 24px;
+  }
+
+  .faq-hero {
+    padding: 46px 18px 49px;
+  }
+
+  .faq-lead {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .faq-section {
+    padding: 38px 0 50px;
+  }
+
+  .faq-list {
+    gap: 11px;
+  }
+
+  .faq-item summary {
+    padding: 18px;
+    gap: 13px;
+    font-size: 14px;
+  }
+
+  .faq-answer {
+    padding: 0 18px 20px;
+    font-size: 14px;
+  }
+
+  .faq-contact {
+    padding: 52px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-width,
+  .header-inner {
+    width: min(100% - 28px, 960px);
+  }
+
+  .logo img {
+    height: 30px;
+    max-width: 150px;
+  }
+
+  .main-nav ul {
+    gap: 5px 12px;
+  }
+
+  .main-nav a {
+    font-size: 13px;
+  }
+
+  .back-inner {
+    min-height: 72px;
+    padding-top: 21px;
+  }
+
+  .back-link {
+    font-size: 13px;
+  }
+
+  .faq-hero h1 {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+
+  .faq-lead {
+    font-size: 14px;
+  }
+
+  .faq-item summary::after {
+    width: 26px;
+    height: 26px;
+    font-size: 20px;
+  }
+}
+
+/* Użytkownicy preferujący mniej animacji nie otrzymują przejść. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .contact-button,
+  .main-nav a {
+    transition: none;
+  }
+}
+
+
+/* ==============================================================
+   7. KOMUNIKAT PRYWATNOŚCI — styl zgodny ze stroną główną
+   ==============================================================
+   Widoczność panelu ustawia faqscript.js przez klasę .is-visible.
+*/
+.privacy-popup {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: none;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #ffffff;
+  background-color: #202020;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.privacy-popup.is-visible {
+  display: block;
+}
+
+.privacy-popup-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.privacy-popup-text { flex: 1; }
+
+.privacy-popup h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.privacy-popup p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.privacy-popup a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.privacy-popup button {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  font: inherit;
+  font-weight: 600;
+  color: #202020;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.privacy-popup button:hover { background-color: #eeeeee; }
+
+.privacy-popup button:focus-visible,
+.privacy-popup a:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .privacy-popup {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    padding: 16px;
+  }
+
+  .privacy-popup-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .privacy-popup button { width: 100%; }
+}
