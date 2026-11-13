@@ -15,5 +15,13 @@
     "opis": "Nowe miejsce na naszej stronie, w którym będziemy dzielić się informacjami ze świata księgowości, podatków i działalności firm.",
     "link": "artykuly/witamy.html",
     "obraz": ""
+  },
+  {
+  "tytul": "Informacja o czasowym zamknięciu biura",
+  "data": "2026-11-13",
+  "kategoria": "Aktualności biura",
+  "opis": "Informujemy, że biuro będzie nieczynne od 13 do 16 listopada 2026 roku. Pracę wznowimy 17 listopada.",
+  "link": "artykuly/biuro-nieczynne-13-16-listopada-2026.html",
+  "obraz": ""
   }
 ]
